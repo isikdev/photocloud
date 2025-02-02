@@ -1,0 +1,38 @@
+RewriteEngine On
+
+###
+# 1) Полный запрет на прямой доступ к папке i/
+#    Любой запрос вида /php/i/... → 404
+###
+RewriteRule ^i/(.*)$ - [R=404,L]
+
+
+###
+# 2) Если реальный файл или папка существуют (кроме i/, см. выше),
+#    отдаем напрямую и выходим
+###
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [L]
+
+
+###
+# 3) /php/report => report.php
+###
+RewriteRule ^report/?$ report.php [QSA,L]
+
+###
+# 4) /php/upload => upload.php
+###
+RewriteRule ^upload/?$ upload.php [QSA,L]
+
+###
+# 5) /php/raw/UUID => index.php?uuid=UUID&raw=1
+#    (это для отдачи файла, если нужно <img src="…">)
+###
+RewriteRule ^raw/([^/]+)/?$ index.php?uuid=$1&raw=1 [QSA,L]
+
+###
+# 6) Остальные варианты считаем UUID => index.php?uuid=…
+###
+RewriteRule ^([^/]+)/?$ index.php?uuid=$1 [QSA,L]

@@ -1,0 +1,82 @@
+/* Файл: css/style.css */
+
+/* Подключаем Tailwind */
+@import url("https://cdn.jsdelivr.net/npm/tailwindcss@3.2.7/dist/tailwind.min.css");
+
+/* Свои доопределения */
+html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+}
+
+body {
+    background-color: #0f0f0f;
+    color: #eaeaea;
+    font-family: "Inter", system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Анимация "fade in up" */
+.fade-slide {
+    animation: fadeSlide 0.6s ease forwards;
+}
+
+@keyframes fadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Темная панель */
+.dark-box {
+    background-color: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+/* Темные кнопки */
+.dark-btn {
+    background-color: #2e2e2e;
+    color: #ccc;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+.dark-btn:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Поля ввода */
+.dark-input {
+    background-color: #2a2a2a;
+    color: #ccc;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+/* Ссылки */
+.dark-link {
+    color: #4ea3f1;
+    text-decoration: underline;
+}
+.dark-link:hover {
+    color: #71baf7;
+}
+
+/* Лого/заголовок */
+.dark-logo {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    color: #ffffff;
+}
